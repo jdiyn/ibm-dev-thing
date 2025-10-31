@@ -1,3 +1,11 @@
+---
+name: "User story"
+about: "Create a user story for the Product Backlog"
+title: ""
+labels: ["enhancement"]
+assignees: []
+---
+
 **As a** [role]  
 **I need** [function]  
 **So that** [benefit]  
