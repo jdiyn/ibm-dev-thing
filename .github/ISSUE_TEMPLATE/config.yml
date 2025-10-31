@@ -1,0 +1,24 @@
+# See: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-issue-and-pull-request-templates
+
+blank_issues_enabled: false
+contact_links:
+  - name: Support / Questions
+    url: https://github.com/jdiyn/ibm-dev-thing/issues/new
+    about: "Create an issue if you have questions about this project."
+
+issue_template:
+  - name: "User story"
+    description: "Create a user story for the Product Backlog"
+    about: "Use this template to add a user story (role, function, benefit + acceptance criteria)."
+    title: ""
+    labels: ["enhancement"]
+    assignees: []
+    template: "user-story.md"
+
+  - name: "Bug report"
+    description: "Report a bug"
+    about: "Use this template to report a defect with steps to reproduce."
+    title: "Bug: "
+    labels: ["bug", "high priority"]
+    assignees: []
+    template: "bug-report.md"
