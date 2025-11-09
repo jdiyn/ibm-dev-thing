@@ -20,6 +20,8 @@ DATABASE_URI = os.getenv(
 
 BASE_URL = "/accounts"
 
+HTTPS_ENVIRON = {"HTTP_ORIGIN": "https://example.com", "REQUEST_METHOD": "GET"}
+
 
 ######################################################################
 #  T E S T   C A S E S
@@ -176,3 +178,9 @@ class TestAccountService(TestCase):
         # make sure they are deleted
         resp = self.client.get(f"{BASE_URL}/{account.id}")
         self.assertEqual(resp.status_code, status.HTTP_404_NOT_FOUND)
+    def test_cors_security(self):
+        """It should return a CORS header"""
+        response = self.client.get('/', environ_overrides=HTTPS_ENVIRON)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        # Check for the CORS header
+        self.assertEqual(response.headers.get('Access-Control-Allow-Origin'), '*')
