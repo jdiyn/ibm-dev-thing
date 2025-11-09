@@ -17,7 +17,7 @@ app.config.from_object(config)
 
 # Initialize Talisman for security headers
 talisman = Talisman(app)
-CORS(app, resources={r"/*": {"origins": "*"}})  # Enable CORS for all routes
+CORS(app, resources={r"/*": {"origins": "*"}}, send_wildcard=True)  # Enable wildcard CORS for all routes
 
 # Import the routes After the Flask app is created
 # pylint: disable=wrong-import-position, cyclic-import, wrong-import-order
