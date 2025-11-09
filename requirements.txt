@@ -30,3 +30,4 @@ httpie==3.2.1
 
 # talisman
 Flask-Talisman
+Flask-CORS
